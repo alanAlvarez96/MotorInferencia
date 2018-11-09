@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 
 public class indice {
-
     public int[] buscarIndice(int llave)throws IOException{
         // regresa la posicion si encuentra el llave si no regresa un -1
         RandomAccessFile file;
