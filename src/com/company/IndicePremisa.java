@@ -8,7 +8,7 @@ public class IndicePremisa {
     int largo=2;
     protected void EscribirPremisa(String premisa,int regla){
         RandomAccessFile file;
-        boolean escrito=false;
+        boolean escrito=false,existe=false;
         StringBuffer nPremisa;
         String prem,prueba;
         int valor,c=0;
@@ -41,6 +41,7 @@ public class IndicePremisa {
                             valor=file.readInt();
                             if(valor==regla){
                                 escrito=false;
+                                existe=true;
                                 break;
                             }
                             else{
@@ -60,7 +61,7 @@ public class IndicePremisa {
                     }
                 }
                 //fin while (en teoria aqui quedamos al final y sabemos si esta escrito)
-                if(!escrito){
+                if(!escrito && !existe){
                     nPremisa=new StringBuffer(premisa);
                     nPremisa.setLength(largo);
                     prueba=nPremisa.toString();

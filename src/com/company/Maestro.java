@@ -5,9 +5,16 @@ import java.io.RandomAccessFile;
 import java.util.Scanner;
 
 public class Maestro {
-    com.company.indice indice=new indice();
-    int configuracion=4;
-    int largo=2;
+
+    indice indice;
+    IndicePremisa iPremisas;
+    int configuracion,largo;
+    public Maestro(){
+        this.indice=new indice();
+        this.iPremisas=new IndicePremisa();
+        this.configuracion=4;
+        this.largo=2;
+    }
     public void escribirMaestro()throws IOException{
         int bandera=1,llave,n;
         int[]res;
@@ -48,6 +55,7 @@ public class Maestro {
                         datos.setLength(largo);
                         prueba=datos.toString();
                         Maestro.writeChars(prueba);
+                        iPremisas.EscribirPremisa(prueba,llave);
                     }
                     else {
                         dato="Pv";
