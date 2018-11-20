@@ -19,13 +19,14 @@ public class Maestro {
         int bandera=1,llave,n;
         int[]res;
         String[]aux;
-        String[]premisas=new String[configuracion];
+
         StringBuffer datos;
         long tamaño;
         String premisa,salida,prueba,dato;
         RandomAccessFile Maestro;
         Scanner entrada=new Scanner(System.in);
         do{
+            String[]premisas=new String[configuracion];
             Maestro=new RandomAccessFile("Maestro","rw");
             tamaño=Maestro.length();
             Maestro.seek(tamaño);//nos vamos hasta el final del archivo
@@ -73,7 +74,7 @@ public class Maestro {
                 System.out.print("ingrese la salida !solo una premisa!");
                 dato=entrada.next();
                 datos=new StringBuffer(dato);
-                datos.setLength(2);
+                datos.setLength(largo);
                 prueba=datos.toString();
                 Maestro.writeChars(prueba);
                 Maestro.close();
